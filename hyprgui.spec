@@ -17,6 +17,10 @@ BuildRequires:  pkgconfig(gtk4)
 Requires:  gtk4
 Requires:  hyprland
 
+%description
+An unofficial GUI for configuring Hyprland, built with GTK4 and Rust.
+Comes with a custom hyprparser for Hyprland's configuration file.
+
 %prep
 # Vendored sources
 %autosetup -n %{name}-%{version} -p1 -a1
