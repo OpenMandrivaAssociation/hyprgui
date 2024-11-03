@@ -33,6 +33,10 @@ EOF
 cargo build --release
 
 %install
-cargo install
+# Rust is so great and amazing that it doesn't even allow using a simple macro to automatically install compiled files. 
+# Don't say rust is great, it's crap from the point of view of a linux distribution, and we're not even talking about distributing libraries as a vendor...
 
 %files
+install -Dm0755 -t "%{buildroot}%{_bindir}/" "%{_builddir}/%{name}-%{version}/target/release/"
+#install -Dm644 "$pkgname.png" "$pkgdir/usr/share/icons/$pkgname.png"
+#install -Dm644 "$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
