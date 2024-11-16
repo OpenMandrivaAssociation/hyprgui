@@ -1,3 +1,4 @@
+%undefine _debugsource_packages
 Name:           hyprgui
 Version:        0.1.8
 Release:        1
