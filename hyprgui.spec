@@ -1,7 +1,7 @@
 Name:           hyprgui
-Version:        0.1.7
+Version:        0.1.8
 Release:        1
-Summary:        GUI for configuring Hyprland, written in blazingly fast Rust!
+Summary:        GUI for configuring Hyprland, written in CRAPPY bad Rust!
 License:        GPL-2.0
 Group:          Tools
 URL:            https://github.com/hyprutils/
@@ -38,10 +38,14 @@ cargo build --release
 
 %install
 # Rust is so great and amazing that it doesn't even allow using a simple macro to automatically install compiled files. 
-# Don't say rust is great, it's crap from the point of view of a linux distribution, and we're not even talking about distributing libraries as a vendor...
+# Don't say rust is great, it's crap from the point of view of a linux distribution, and we're not even talking about distributing libraries as a vendor... because this is even worse!
 
-install -Dm0755 -t "%{buildroot}%{_bindir}/" "%{_builddir}/%{name}-%{version}/target/release/"
-#install -Dm644 "$pkgname.png" "$pkgdir/usr/share/icons/$pkgname.png"
-#install -Dm644 "$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
+install -Dm0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
+install -Dm0644 ./%{name}.png %{buildroot}%{_datadir}/icons/%{name}.png
+install -Dm0644 ./%{name}.svg %{buildroot}%{_datadir}/icons/%{name}.svg
+install -Dm0644 ./%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
 
 %files
+%{_bindir}/%{name}
+%{_datadir}/applications/%{name}.desktop
+%{_iconsdir}/%{name}.*
