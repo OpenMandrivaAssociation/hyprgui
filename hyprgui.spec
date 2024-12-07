@@ -1,6 +1,6 @@
 %undefine _debugsource_packages
 Name:           hyprgui
-Version:        0.1.9
+Version:        0.2.0
 Release:        1
 Summary:        GUI for configuring Hyprland, written in CRAPPY bad Rust!
 License:        GPL-2.0
